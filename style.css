@@ -1,0 +1,91 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-image: url(berkayappbackground.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top; 
+    background-size: cover;
+}
+
+#container {
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#inputDiv {
+    display: flex;
+}
+
+#movieInput {
+    width: 80%;
+    margin: 5px 2.5px 5px 5px ;
+    padding: 15px;
+    border: solid black 0.5px;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+#movieList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.movie {
+    margin: 5px;
+    padding: 15px;
+    border: solid black 0.5px;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+.movie:hover {
+    background: grey;
+    color: black;
+    cursor: pointer;
+}
+
+#alert {
+    margin: 5px;
+    padding: 15px;
+    border: solid black 0.5px;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+#checked:before {
+    content: '✓ ';
+}
+
+#deleteBtn {
+    float: right;
+    opacity: 0.5;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+
+#deleteBtn:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.inputBtns {
+    float: right;
+    margin: 5px 5px 5px 2.5px;
+    width: 10%;
+    border: solid black 0.5px;
+    opacity: 0.5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.inputBtns:hover {
+    background: grey;
+    color: black;
+    cursor: pointer;
+}
