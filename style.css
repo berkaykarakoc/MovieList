@@ -2,12 +2,16 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-body {
-    background-image: url(berkayappbackground.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center top; 
-    background-size: cover;
+#headerDiv{ 
+    padding: 15px;
+    background-color: rgb(123, 193, 236);
+}
+
+header {
+    text-align: center;
+    font-size: 16pt;
+    color: white;
+    cursor: default;
 }
 
 #container {
@@ -22,11 +26,9 @@ body {
 
 #movieInput {
     width: 80%;
-    margin: 5px 2.5px 5px 5px ;
     padding: 15px;
     border: solid black 0.5px;
-    opacity: 0.5;
-    border-radius: 10px;
+    border-radius: 7.5px 0 0 7.5px;
 }
 
 #movieList {
@@ -35,24 +37,23 @@ body {
 }
 
 .movie {
-    margin: 5px;
-    padding: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
     border: solid black 0.5px;
-    opacity: 0.5;
     border-radius: 10px;
 }
 
 .movie:hover {
-    background: grey;
+    background: rgb(123, 193, 236);
     color: black;
     cursor: pointer;
 }
 
 #alert {
-    margin: 5px;
-    padding: 15px;
+    background-color: rgb(255, 219, 1);
+    margin-top: 10px;
+    padding: 10px;
     border: solid black 0.5px;
-    opacity: 0.5;
     border-radius: 10px;
 }
 
@@ -62,30 +63,30 @@ body {
 
 #deleteBtn {
     float: right;
-    opacity: 0.5;
     cursor: pointer;
     padding-right: 5px;
 }
 
 
 #deleteBtn:hover {
-    opacity: 1;
     cursor: pointer;
-    transition: 0.5s;
+    color: red;
+}
+
+#clearBtn {
+    border-radius: 0 7.5px 7.5px 0;
 }
 
 .inputBtns {
     float: right;
-    margin: 5px 5px 5px 2.5px;
     width: 10%;
     border: solid black 0.5px;
-    opacity: 0.5;
-    border-radius: 10px;
     text-align: center;
+    background-color: rgb(123, 193, 236);
+    color: white;
 }
 
 .inputBtns:hover {
-    background: grey;
-    color: black;
+    background: rgb(50, 165, 255);
     cursor: pointer;
 }
