@@ -47,10 +47,15 @@ body {
     border-radius: 7.5px 7.5px 7.5px 7.5px;
 }
 
+#movieList:empty {
+    border: none;
+}
+
 .movie {
     border: solid silver;
     border-width: 0 0 1px 0;
     padding:.5em;
+    cursor: pointer;
 }
 
 .movie:first-of-type {
@@ -63,17 +68,11 @@ body {
     border-radius: 0 0 7.5px 7.5px;
 }
 
-.movie:hover {
-    background: rgb(50, 165, 255);
-    color: white;
-    cursor: pointer;
-}
-
 #alert {
-    background-color: rgb(255, 219, 1);
+    background-color: rgb(255, 255, 130);
     margin-top: 10px;
     padding: 10px;
-    border: solid black 0.5px;
+    border: solid silver 1px;
     border-radius: 10px;
 }
 
@@ -111,7 +110,7 @@ body {
 }
 
 .inputBtns:hover {
-    background: rgb(50, 165, 255);
+    background: rgb(123, 193, 236);
     cursor: pointer;
     color: white;
 }
