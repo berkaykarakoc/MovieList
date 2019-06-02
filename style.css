@@ -59,12 +59,16 @@ body {
 
 .movie:first-of-type {
     border-width: 0 0 1px 0;
-    border-radius: 7.5px 7.5px 0 0;
+    border-radius: 7.5px 0 0 0;
 }
 
 .movie:last-of-type {
     border-width: 0;
-    border-radius: 0 0 7.5px 7.5px;
+    border-radius: 0 0 0 7.5px;
+}
+
+.movie:only-child {
+    border-radius: 7.5px 0 0 7.5px;
 }
 
 #alert {
