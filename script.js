@@ -34,15 +34,19 @@ addBtn.addEventListener('click', function() {
 
 clearBtn.addEventListener('click', function() {
     if (movieList.innerHTML == '') {
-        var alertDiv = createAlertDiv('Nothing to delete!');
-        container.insertBefore(alertDiv, movieDiv);
-        setTimeout(function() {
-            document.getElementById('alert').remove();
-        }, 3000);
-        return;
+            var alertDiv = createAlertDiv('Nothing to delete!');
+            container.insertBefore(alertDiv, movieDiv);
+            setTimeout(function() {
+                document.getElementById('alert').remove();
+            }, 3000);
+            return;
+    } else {
+        result = confirm("Do you really want to clear your list?");
     }
-    movieList.innerHTML = '';
-    clear();
+    if (result == true) {
+        movieList.innerHTML = '';
+        clear();
+    }
 });
 
 /* functions to remove list item and to check list */
