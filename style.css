@@ -27,25 +27,41 @@ header {
 #movieInput {
     width: 80%;
     padding: 15px;
-    border: solid black 0.5px;
+    border: 0 solid silver;
+    border-width: 1px 0.5px 1px 1px;
     border-radius: 7.5px 0 0 7.5px;
 }
 
 #movieList {
     list-style-type: none;
     padding: 0;
+    border: 0 solid silver;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 7.5px 7.5px 7.5px 7.5px;
 }
 
 .movie {
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;
     padding: 10px;
-    border: solid black 0.5px;
-    border-radius: 10px;
+    border: solid black 0.5px;*/
+    border: solid silver;
+    border-width: 0 0 1px 0;
+    padding:.5em;
+}
+
+.movie:first-of-type {
+    border-width: 0 0 1px 0;
+    border-radius: 7.5px 7.5px 0 0;
+}
+
+.movie:last-of-type {
+    border-width: 0;
+    border-radius: 0 0 7.5px 7.5px;
 }
 
 .movie:hover {
     background: rgb(123, 193, 236);
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
@@ -75,18 +91,23 @@ header {
 
 #clearBtn {
     border-radius: 0 7.5px 7.5px 0;
+    border-width: 1px 1px 1px 0.5px;
+}
+
+#addBtn {
+    border-width: 1px 0.5px 1px 0.5px;
 }
 
 .inputBtns {
     float: right;
     width: 10%;
-    border: solid black 0.5px;
+    border: solid silver 0.5px;
     text-align: center;
-    background-color: rgb(123, 193, 236);
-    color: white;
+    background: none;
 }
 
 .inputBtns:hover {
     background: rgb(50, 165, 255);
     cursor: pointer;
+    color: white;
 }
