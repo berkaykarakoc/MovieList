@@ -75,8 +75,8 @@ body {
     border-radius: 10px;
 }
 
-#checked:before {
-    content: '✓ ';
+#checked {
+    border-left: 10px solid rgb(123, 193, 236);
 }
 
 #deleteBtn {
