@@ -2,20 +2,27 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
-#headerDiv{ 
-    padding: 15px;
-    background-color: rgb(123, 193, 236);
-}
-
 header {
     text-align: center;
     font-size: 16pt;
     color: white;
     cursor: default;
+    padding: 15px;
+    background-color: rgb(123, 193, 236);
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.2s;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
 }
 
 #container {
-    margin-top: 50px;
+    margin-top: 80px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -41,9 +48,6 @@ header {
 }
 
 .movie {
-    /*margin-bottom: 10px;
-    padding: 10px;
-    border: solid black 0.5px;*/
     border: solid silver;
     border-width: 0 0 1px 0;
     padding:.5em;
@@ -60,7 +64,7 @@ header {
 }
 
 .movie:hover {
-    background: rgb(123, 193, 236);
+    background: rgb(50, 165, 255);
     color: white;
     cursor: pointer;
 }
@@ -110,4 +114,13 @@ header {
     background: rgb(50, 165, 255);
     cursor: pointer;
     color: white;
+}
+
+footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 10pt;
 }
