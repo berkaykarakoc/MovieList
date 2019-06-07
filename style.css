@@ -13,6 +13,7 @@ header {
     top: 0;
     width: 100%;
     text-align: center;
+    transition: 350ms;
 }
 
 body {
@@ -55,6 +56,7 @@ body {
     border-width: 0 0 1px 0;
     padding:.5em;
     cursor: pointer;
+    transition: 350ms;
 }
 
 .movie:first-of-type {
@@ -77,6 +79,8 @@ body {
     padding: 10px;
     border: solid silver 1px;
     border-radius: 7.5px;
+    transition: 350ms;
+    animation: fade 0.4s ease;
 }
 
 #checked {
@@ -87,12 +91,14 @@ body {
     float: right;
     cursor: pointer;
     padding-right: 5px;
+    transition: 350ms;
 }
 
 
 #deleteBtn:hover {
     cursor: pointer;
     color: red;
+    transform: scale(1.25);
 }
 
 #clearBtn {
@@ -110,12 +116,14 @@ body {
     border: solid silver 0.5px;
     text-align: center;
     background: none;
+    transition: 350ms;
 }
 
 .inputBtns:hover {
     background: rgb(123, 193, 236);
     cursor: pointer;
     color: white;
+    transform: scale(1.1);
 }
 
 footer {
@@ -125,4 +133,13 @@ footer {
     left: 0;
     text-align: center;
     font-size: 10pt;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -22,7 +22,8 @@ addBtn.addEventListener('click', function() {
         var alertDiv = createAlertDiv('Enter a movie to add!');
         container.insertBefore(alertDiv, movieDiv);
         setTimeout(function() {
-            document.getElementById('alert').remove();
+            var alertItem = document.getElementById('alert');
+            alertItem.remove();
         }, 3000);
         return;
     }
@@ -37,7 +38,8 @@ clearBtn.addEventListener('click', function() {
             var alertDiv = createAlertDiv('Nothing to delete!');
             container.insertBefore(alertDiv, movieDiv);
             setTimeout(function() {
-                document.getElementById('alert').remove();
+                var alertItem = document.getElementById('alert');
+                alertItem.remove();
             }, 3000);
             return;
     } else {
@@ -48,6 +50,17 @@ clearBtn.addEventListener('click', function() {
         clear();
     }
 });
+
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.fontSize = "15px";
+  } else {
+    document.getElementById("header").style.fontSize = "22.5px";
+  }
+}
 
 /* functions to remove list item and to check list */
 function removeListItem(e) {
