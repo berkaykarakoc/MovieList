@@ -123,21 +123,45 @@ body {
     border-radius: 7.5px 7.5px 7.5px 7.5px;
 }
 
-#alert {
+#alertDiv {
+    display: none;
+}
+
+#alertList {
+    margin-top: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#alertList:empty {
+    border: none;
+}
+
+.alertBox {
     padding:.5em;
     cursor: pointer;
     transition: 350ms;
     background: #313131;
     border: solid #313131 1px;
     cursor: default;
-    margin-top: 15px;
-    border-radius: 7.5px;
     transition: 350ms;
     animation: fade 0.4s ease;
 }
 
-#alert:hover {
+.alertBox:hover {
     border: solid #525252 1px;
+}
+
+.alertBox:first-of-type {
+    border-radius: 7.5px 7.5px 0 0;
+}
+
+.alertBox:last-of-type {
+    border-radius: 0 0 7.5px 7.5px;
+}
+
+.alertBox:only-child {
+    border-radius: 7.5px 7.5px 7.5px 7.5px;
 }
 
 #checked {

@@ -9,6 +9,9 @@ var movieList = document.getElementById('movieList');
 var container = document.getElementById("container");
 var movieDiv = document.getElementById('movieDiv');
 
+var alertDiv = document.getElementById('alertDiv');
+var alertList = document.getElementById('alertList');
+
 /* Add with enter key */
 movieInput.addEventListener("keyup", function(e) {
     if (e.keyCode === 13) {
@@ -19,11 +22,11 @@ movieInput.addEventListener("keyup", function(e) {
 /* event listeners for add and clear button */
 addBtn.addEventListener('click', function() {
     if (movieInput.value == '') {
-        var alertDiv = createAlertDiv('Enter a movie to add!');
-        container.insertBefore(alertDiv, movieDiv);
+        alertDiv.style.display = 'inline';
+        var alertElement = createAlert('Enter a movie to add!');
+        alertList.appendChild(alertElement);
         setTimeout(function() {
-            var alertItem = document.getElementById('alert');
-            alertItem.remove();
+            alertElement.remove()
         }, 3000);
         return;
     }
@@ -58,11 +61,11 @@ function clearList() {
 
 function customComfirm() {
     if (movieList.innerHTML == '') {
-        var alertDiv = createAlertDiv('Nothing to delete!');
-        container.insertBefore(alertDiv, movieDiv);
+        alertDiv.style.display = 'inline';
+        var alertElement = createAlert('Nothing to delete!');
+        alertList.appendChild(alertElement);
         setTimeout(function() {
-            var alertItem = document.getElementById('alert');
-            alertItem.remove();
+            alertElement.remove();
         }, 3000);
         return;
     }
@@ -119,11 +122,11 @@ function checkListItem(e) {
     store();
 }
 
-function createAlertDiv(alertText) {
-        var alertDiv = document.createElement('div');
-        alertDiv.setAttribute('id', 'alert');
-        alertDiv.innerHTML = alertText + '<span id="alertBox"><span id="deleteBtn" type="button" onclick="removeListItem(this.parentNode)">x</span></span>'
-        return alertDiv;
+function createAlert(alertText) {
+        var alertElement = document.createElement('LI');
+        alertElement.setAttribute('class', 'alertBox');
+        alertElement.innerHTML = alertText + '<span id="deleteBtn" type="button" onclick="removeListItem(this)">x</span>';
+        return alertElement;
 }
 
 /* local storage functions */
@@ -142,5 +145,7 @@ function retrieve() {
         movieList.innerHTML = saved;
     }
 }
+
+if(!alertList.hasChildNodes) {alertDiv.style.display = 'none';}
 
 retrieve();
