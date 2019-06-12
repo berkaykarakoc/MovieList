@@ -200,6 +200,8 @@ body {
     transition: 350ms;
     color: white;
     background: #525252;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .inputBtns:hover {
