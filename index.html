@@ -11,9 +11,17 @@
     <link rel="icon" type="image/png" href="Letter-M-blue-icon.png"/>
 </head>
 <body>
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+        <div>
+            <div id="dialogboxhead"></div>
+            <div id="dialogboxbody"></div>
+            <div id="dialogboxfoot"></div>
+        </div>
+    </div>
     <div id="headerDiv">
         <header id="header">
-            Movie List        
+            Movie List
         </header>
     </div>
    
@@ -21,7 +29,7 @@
         <div id="inputDiv">
             <input id="movieInput" type="text" placeholder="Add Movie...">
             <button id="addBtn" class="inputBtns" type="button">Add</button>
-            <button id="clearBtn" class="inputBtns" type="button">Clear</button>
+            <button id="clearBtn" onclick="customComfirm()" class="inputBtns" type="button">Clear</button>
         </div>
         <div id="movieDiv">
             <ul id="movieList"></ul>

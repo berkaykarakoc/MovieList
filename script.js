@@ -28,28 +28,69 @@ addBtn.addEventListener('click', function() {
         return;
     }
 
-    movieList.innerHTML += '<li class="movie" onclick="checkListItem(this)">' + movieInput.value + '<span id="deleteBtn" type="button" onclick="removeListItem(this)">x</span></li>';
+    movieList.innerHTML += '<li id="unchecked" class="movie" onclick="checkListItem(this)">' + movieInput.value + '<span id="deleteBtn" type="button" onclick="removeListItem(this)">x</span></li>';
     movieInput.value = '';
     store();
 });
 
-clearBtn.addEventListener('click', function() {
+// clearBtn.addEventListener('click', function() {
+//     if (movieList.innerHTML == '') {
+//             var alertDiv = createAlertDiv('Nothing to delete!');
+//             container.insertBefore(alertDiv, movieDiv);
+//             setTimeout(function() {
+//                 var alertItem = document.getElementById('alert');
+//                 alertItem.remove();
+//             }, 3000);
+//             return;
+//     } else {
+//         result = confirm("Do you really want to clear your list?");
+//     }
+//     if (result == true) {
+//         movieList.innerHTML = '';
+//         clear();
+//     }
+// });
+
+function clearList() {
+    movieList.innerHTML = '';
+    clear();
+}
+
+function customComfirm() {
     if (movieList.innerHTML == '') {
-            var alertDiv = createAlertDiv('Nothing to delete!');
-            container.insertBefore(alertDiv, movieDiv);
-            setTimeout(function() {
-                var alertItem = document.getElementById('alert');
-                alertItem.remove();
-            }, 3000);
-            return;
-    } else {
-        result = confirm("Do you really want to clear your list?");
+        var alertDiv = createAlertDiv('Nothing to delete!');
+        container.insertBefore(alertDiv, movieDiv);
+        setTimeout(function() {
+            var alertItem = document.getElementById('alert');
+            alertItem.remove();
+        }, 3000);
+        return;
     }
-    if (result == true) {
-        movieList.innerHTML = '';
-        clear();
-    }
-});
+    // var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var dialogoverlay = document.getElementById('dialogoverlay');
+    var dialogbox = document.getElementById('dialogbox');
+    dialogoverlay.style.display = "flex";
+    dialogoverlay.style.height = winH + "px";
+    // dialogbox.style.left = (winW/2) - (550*.5) + "px";
+    // dialogbox.style.right = (winW/2) - (550*.5) + "px";
+    dialogbox.style.top = "100px";
+    dialogbox.style.display = "flex";
+    document.getElementById('dialogboxhead').innerHTML = 'Do you really want to clear your list?';
+    document.getElementById('dialogboxbody').innerHTML = 'This operation cannot be undone!';
+    document.getElementById('dialogboxfoot').innerHTML = '<button id="yes" class="dialogBtns" onclick="yes()">Yes</button><button id="no" class="dialogBtns" onclick="no()">No</button>';
+}
+
+function no() {
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById('dialogoverlay').style.display = "none";
+}
+
+function yes() {
+    clearList();
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById('dialogoverlay').style.display = "none";
+}
 
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 window.onscroll = function() {scrollFunction()};
@@ -70,7 +111,7 @@ function removeListItem(e) {
 
 function checkListItem(e) {
     if (e.getAttribute('id') == 'checked') {
-        e.removeAttribute('id');
+        e.setAttribute('id', 'unchecked');
         store();
         return;
     }

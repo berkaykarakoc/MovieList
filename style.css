@@ -1,5 +1,54 @@
 html {
     font-family: 'Open Sans', sans-serif;
+    background: #414141;
+    color: white;
+}
+
+#dialogoverlay{
+	display: none;
+	opacity: .1;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+    justify-content: center;
+	display: none;
+    position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ cursor: default; background: #313131; font-size:19px; padding:10px; color:white; }
+#dialogbox > div > #dialogboxbody{ cursor: default; background: #414141; font-size:15px; padding:20px; color:white; }
+#dialogbox > div > #dialogboxfoot{ cursor: default; background: #414141; padding:10px; text-align:center; }
+
+#no {
+    margin-left: 5px;
+}
+
+#yes {
+    margin-right: 5px;
+}
+
+.dialogBtns {
+    border-radius: 7.5px;
+    padding: 7.5px;
+    width: 25%;
+    border: solid #525252 1px;
+    text-align: center;
+    background: none;
+    transition: 350ms;
+    color: white;
+    background: #525252;
+}
+
+.dialogBtns:hover {
+    border: solid 1px #313131;
+    cursor: pointer;
 }
 
 header {
@@ -7,7 +56,7 @@ header {
     color: white;
     cursor: default;
     padding: 15px;
-    background-color: rgb(123, 193, 236);
+    background-color: #313131;
     font-weight: bold;
     position: fixed;
     top: 0;
@@ -29,22 +78,21 @@ body {
 
 #inputDiv {
     display: flex;
+    color: white;
 }
 
 #movieInput {
     width: 80%;
     padding: 15px;
-    border: 0 solid silver;
-    border-width: 1px 0.5px 1px 1px;
+    border: 0;
     border-radius: 7.5px 0 0 7.5px;
+    background: #525252;
+    color: white;
 }
 
 #movieList {
     list-style-type: none;
     padding: 0;
-    border: 0 solid silver;
-    border-width: 1px 1px 1px 1px;
-    border-radius: 7.5px 7.5px 7.5px 7.5px;
 }
 
 #movieList:empty {
@@ -52,39 +100,48 @@ body {
 }
 
 .movie {
-    border: solid silver;
-    border-width: 0 0 1px 0;
     padding:.5em;
     cursor: pointer;
     transition: 350ms;
+    background: #525252;
+    border: solid #525252 1px;
+}
+
+.movie:hover {
+    border: solid 1px #313131;
 }
 
 .movie:first-of-type {
-    border-width: 0 0 1px 0;
-    border-radius: 7.5px 0 0 0;
+    border-radius: 7.5px 7.5px 0 0;
 }
 
 .movie:last-of-type {
-    border-width: 0;
-    border-radius: 0 0 0 7.5px;
+    border-radius: 0 0 7.5px 7.5px;
 }
 
 .movie:only-child {
-    border-radius: 7.5px 0 0 7.5px;
+    border-radius: 7.5px 7.5px 7.5px 7.5px;
 }
 
 #alert {
-    background-color: rgb(255, 255, 130);
-    margin-top: 10px;
-    padding: 10px;
-    border: solid silver 1px;
+    padding:.5em;
+    cursor: pointer;
+    transition: 350ms;
+    background: #313131;
+    border: solid #313131 1px;
+    cursor: default;
+    margin-top: 15px;
     border-radius: 7.5px;
     transition: 350ms;
     animation: fade 0.4s ease;
 }
 
+#alert:hover {
+    border: solid #525252 1px;
+}
+
 #checked {
-    border-left: 10px solid rgb(123, 193, 236);
+    border-left: 10px solid #212121;
 }
 
 #deleteBtn {
@@ -97,7 +154,7 @@ body {
 
 #deleteBtn:hover {
     cursor: pointer;
-    color: red;
+    color: #CA3E47;
     transform: scale(1.25);
 }
 
@@ -113,17 +170,17 @@ body {
 .inputBtns {
     float: right;
     width: 10%;
-    border: solid silver 0.5px;
+    border: solid #525252 0.5px;
     text-align: center;
     background: none;
     transition: 350ms;
+    color: white;
+    background: #525252;
 }
 
 .inputBtns:hover {
-    background: rgb(123, 193, 236);
+    border: solid 1px #313131;
     cursor: pointer;
-    color: white;
-    transform: scale(1.1);
 }
 
 footer {
